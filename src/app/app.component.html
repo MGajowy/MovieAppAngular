@@ -1,0 +1,37 @@
+<!-- <div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Movie</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="movies" class="nav-link">Movies</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="addMovie" class="nav-link">Add movie</a>
+      </li>
+    </div>
+  </nav>
+
+    <router-outlet></router-outlet>
+
+</div> -->
+
+<div class="shadowbox-page">
+  <div class="p-grid p-flex-column">
+    <div class="p-col">
+      <div class="box">
+        <button pButton pRipple type="button" label="Lista filmów" class="p-button-raised p-button-text"
+          (click)="listMovies()"></button>
+        <button pButton pRipple type="button" label="Dodaj nowy film"
+          class="p-button-raised p-button-success p-button-text" (click)="addMovie()"></button>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid p-flex-column">
+    <div class="p-col">
+      <div class="box">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+</div>

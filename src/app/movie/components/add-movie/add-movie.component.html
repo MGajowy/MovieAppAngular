@@ -1,0 +1,15 @@
+<div class="p-formgroup-inline">
+  <div class="p-field">
+    <label for="firstname" class="p-sr-only">Tytuł</label>
+    <input id="firstname" type="text" pInputText placeholder="Tytuł" [(ngModel)]="title">
+  </div>
+  <div class="p-field">
+    <label for="lastname" class="p-sr-only">Opis</label>
+    <input id="lastname" type="text" pInputText placeholder="Opis" [(ngModel)]="description">
+  </div>
+  <!-- <div class="p-field">
+    <label for="lastname" class="p-sr-only">Rok wydania</label>
+    <input id="lastname" type="text" pInputText placeholder="Rok wydania" [(ngModel)]="date"> 
+</div> -->
+  <button pButton type="button" label="Zapisz" (click)="addNewMovie()"></button>
+</div>
