@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { Movie } from '../../shared/Movie';
 import { Router } from '@angular/router';
-import { Director } from 'src/app/director/shared/director';
+import { Director } from './../../../director/shared/Director';
 import { DirectorsService } from 'src/app/director/services/directors.service';
 
 @Component({

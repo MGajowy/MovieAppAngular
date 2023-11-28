@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../../shared/Movie';
 
 import { DirectorsService } from 'src/app/director/services/directors.service';
-import { Director } from 'src/app/director/shared/director';
+import { Director } from './../../../director/shared/Director';
 
 @Component({
   selector: 'app-movie-details',

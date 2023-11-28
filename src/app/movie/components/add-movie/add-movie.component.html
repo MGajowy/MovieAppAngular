@@ -1,16 +1,20 @@
-<div class="p-formgroup-inline" *ngIf="directorList.length > 0; else addDirector">
-  <div class="p-field">
-    <label for="firstname" class="p-sr-only">Tytuł</label>
-    <input id="firstname" type="text" pInputText placeholder="Tytuł" [(ngModel)]="title">
+<p-panel header="Dodaj nowy film">
+  <div class="p-formgroup-inline" *ngIf="directorList.length > 0; else addDirector">
+    <div class="p-field">
+      <label for="firstname" class="p-sr-only">Tytuł</label>
+      <input id="firstname" type="text" pInputText placeholder="Tytuł" [(ngModel)]="title">
+    </div>
+    <div class="p-field">
+      <label for="lastname" class="p-sr-only">Opis</label>
+      <input id="lastname" type="text" pInputText placeholder="Opis" [(ngModel)]="description">
+    </div>
+    <div class="p-field">
+      <p-dropdown [options]="directorList" [(ngModel)]="selectedDirector" placeholder="Wybierz reżysera"
+        optionLabel="surname" [showClear]="true"></p-dropdown>
+    </div>
+    <button pButton type="button" label="Zapisz" (click)="addNewMovie()"></button>
   </div>
-  <div class="p-field">
-    <label for="lastname" class="p-sr-only">Opis</label>
-    <input id="lastname" type="text" pInputText placeholder="Opis" [(ngModel)]="description">
-  </div>
-  <p-dropdown [options]="directorList" [(ngModel)]="selectedDirector" placeholder="Wybierz reżysera"
-    optionLabel="surname" [showClear]="true"></p-dropdown>
-  <button pButton type="button" label="Zapisz" (click)="addNewMovie()"></button>
-</div>
-<ng-template #addDirector>
-  <button pButton type="button" label="Dodaj reżysera" (click)="addNewDirector()"></button>
-</ng-template>
+  <ng-template #addDirector>
+    <button pButton type="button" label="Dodaj reżysera" (click)="addNewDirector()"></button>
+  </ng-template>
+</p-panel>

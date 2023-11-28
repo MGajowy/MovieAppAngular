@@ -1,23 +1,25 @@
-<div class="container-box" style="width: auto;">
-  <div *ngIf="movieDetails">
-    <div class="item-detail">
-      <label><b>Tytuł:</b></label> {{movieDetails.title}}
+<p-panel header="Szczegóły filmu">
+  <div class="container-box" style="width: auto;">
+    <div *ngIf="movieDetails">
+      <div class="item-detail">
+        <label><b>Tytuł:</b></label> {{movieDetails.title}}
+      </div>
+      <div class="item-detail">
+        <label><b>Opis: </b></label> {{movieDetails.description}}
+      </div>
+      <div class="item-detail">
+        <label><b>Reżyser: </b></label> {{director.name}} {{director.surname}}
+      </div>
     </div>
-    <div class="item-detail">
-      <label><b>Opis: </b></label> {{movieDetails.description}}
-    </div>
-    <div class="item-detail">
-      <label><b>Reżyser: </b></label> {{director.name}} {{director.surname}}
+    <div>
+      <button pButton pRipple type="button" label="Usuń" class="p-button-raised p-button-danger p-button-text"
+        (click)="deleteMovie()"></button>
+      <button pButton pRipple type="button" label="Modyfikuj" class="p-button-raised p-button-text"
+        (click)="modifyMovie()"></button>
     </div>
   </div>
-  <div>
-    <button pButton pRipple type="button" label="Usuń" class="p-button-raised p-button-danger p-button-text"
-      (click)="deleteMovie()"></button>
-    <button pButton pRipple type="button" label="Modyfikuj" class="p-button-raised p-button-text"
-      (click)="modifyMovie()"></button>
-  </div>
-</div>
 
-<div class="container-box" style="width: auto;">
-  <app-modify-movie *ngIf="modify"></app-modify-movie>
-</div>
+  <div class="container-box" style="width: auto;">
+    <app-modify-movie *ngIf="modify"></app-modify-movie>
+  </div>
+</p-panel>

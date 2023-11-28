@@ -18,6 +18,7 @@ import {ModifyMovieComponent} from './movie/components/modify-movie/modify-movie
 import { AddDirectorComponent } from './director/components/add-director/add-director.component';
 import { DirectorsListComponent } from './director/components/directors-list/directors-list.component';
 import { DropdownModule } from 'primeng/dropdown';
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -41,8 +42,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ButtonModule, 
     TableModule, 
     HttpClientModule, 
-    DropdownModule
-  
+    DropdownModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

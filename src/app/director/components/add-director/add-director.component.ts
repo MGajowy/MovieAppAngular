@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DirectorsService } from '../../services/directors.service';
-import { Director } from '../../shared/director';
 import { Router } from '@angular/router';
 
 @Component({
