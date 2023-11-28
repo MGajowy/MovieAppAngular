@@ -15,6 +15,9 @@ import {ButtonModule} from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import {HttpClientModule } from '@angular/common/http';
 import {ModifyMovieComponent} from './movie/components/modify-movie/modify-movie.component';
+import { AddDirectorComponent } from './director/components/add-director/add-director.component';
+import { DirectorsListComponent } from './director/components/directors-list/directors-list.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import {ModifyMovieComponent} from './movie/components/modify-movie/modify-movie
     AddMovieComponent,
     MovieDetailsComponent,
     MoviesListComponent,
-    ModifyMovieComponent
+    ModifyMovieComponent,
+    AddDirectorComponent,
+    DirectorsListComponent
 
   ],
   imports: [
@@ -36,8 +41,8 @@ import {ModifyMovieComponent} from './movie/components/modify-movie/modify-movie
     ButtonModule, 
     TableModule, 
     HttpClientModule, 
-    
-
+    DropdownModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

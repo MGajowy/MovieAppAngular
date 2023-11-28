@@ -11,14 +11,21 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    ) { }
+  ) { }
 
-listMovies() {
-  this.router.navigate(['movies'])
-}
+  listMovies() {
+    this.router.navigate(['movies'])
+  }
 
-addMovie() {
-  this.router.navigate(['addMovie'])
-}
+  addMovie() {
+    this.router.navigate(['addMovie'])
+  }
 
+  addDirector() {
+    this.router.navigate(['addDirector'])
+  }
+
+  listDirectors() {
+    this.router.navigate(['directors'])
+  }
 }

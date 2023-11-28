@@ -4,7 +4,6 @@
       <tr>
           <th>Tytuł</th>
           <th>Opis</th>
-          <th>Rok wydania</th>
           <th>Szczegóły</th>
       </tr>
   </ng-template>
@@ -12,7 +11,6 @@
       <tr>
           <td>{{movie.title}}</td>
           <td>{{movie.description}}</td>
-          <td>{{movie.date}}</td>
           <td><button pButton pRipple type="button" label="Szczegóły" class="p-button-raised p-button-success p-button-text" (click)="details(movie.id)"></button></td>
       </tr>
   </ng-template>

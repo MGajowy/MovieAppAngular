@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { Movie } from '../../shared/Movie';
 import { Router } from '@angular/router';
+import { Director } from 'src/app/director/shared/director';
+import { DirectorsService } from 'src/app/director/services/directors.service';
 
 @Component({
   selector: 'app-add-movie',
@@ -10,17 +12,21 @@ import { Router } from '@angular/router';
 })
 export class AddMovieComponent implements OnInit {
 
+
+  selectedDirector: Director;
   description: string = '';
   title: string = '';
-  date: number
   movie: Movie;
+  directorId: number;
+  directorList: Director[] = [];
 
   constructor(
     private moviesService: MoviesService,
+    private directorServieces: DirectorsService,
     private router: Router) { }
 
   ngOnInit() {
-
+    this.getDirectorList()
     this.title = '';
     this.description = '';
   }
@@ -28,7 +34,8 @@ export class AddMovieComponent implements OnInit {
   addNewMovie() {
     this.movie = {
       title: this.title,
-      description: this.description
+      description: this.description,
+      directorId: this.selectedDirector.id
     }
 
     this.moviesService.createMovie(this.movie).subscribe(reslut => {
@@ -39,6 +46,17 @@ export class AddMovieComponent implements OnInit {
 
     })
 
+  }
+
+  getDirectorList() {
+    this.directorServieces.getAllDirector().subscribe(result => {
+      this.directorList = result;
+      console.log(this.directorList);
+    })
+  }
+
+  addNewDirector() {
+    this.router.navigate(['addDirector'])
   }
 
 }

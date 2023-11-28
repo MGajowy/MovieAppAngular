@@ -3,6 +3,9 @@ import { MoviesService } from '../../services/movies.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../../shared/Movie';
 
+import { DirectorsService } from 'src/app/director/services/directors.service';
+import { Director } from 'src/app/director/shared/director';
+
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -13,17 +16,26 @@ export class MovieDetailsComponent implements OnInit {
   id: number;
   movieDetails: Movie;
   modify: boolean = false;
+  director: Director;
 
   constructor(
     private moviesService: MoviesService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, 
+    private directorsService: DirectorsService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
 
     this.moviesService.getMovie(this.id).subscribe( result => {
-      this.movieDetails = result;})
+      this.movieDetails = result;
+      this.getDirectorInfo(result.directorId)
+    })
+  }
+  getDirectorInfo(id: number) {
+    this.directorsService.getDirector(id).subscribe(result => {
+      this.director = result;
+    })
   }
 
   deleteMovie() {

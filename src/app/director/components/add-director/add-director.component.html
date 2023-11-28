@@ -1,0 +1,12 @@
+
+<div class="p-formgroup-inline">
+  <div class="p-field">
+    <label for="firstname" class="p-sr-only">Imię</label>
+    <input id="firstname" type="text" pInputText placeholder="Imię" [(ngModel)]="name">
+  </div>
+  <div class="p-field">
+    <label for="lastname" class="p-sr-only">Nazwisko</label>
+    <input id="lastname" type="text" pInputText placeholder="Nazwisko" [(ngModel)]="surname">
+  </div>
+  <button pButton type="button" label="Zapisz" (click)="addNewDirector()"></button>
+</div>
