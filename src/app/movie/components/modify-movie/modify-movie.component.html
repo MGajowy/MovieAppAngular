@@ -1,3 +1,20 @@
-<p>
-  modify-movie works!
-</p>
+<div class="p-formgroup-inline">
+  <div class="p-field">
+    <span class="p-float-label">
+      <input id="float-input-invalid" type="text" pInputText [(ngModel)]="movie.title" class="ng-invalid ng-dirty">
+      <label for="float-input-invalid">Tytuł</label>
+    </span>
+  </div>
+  <div class="p-field">
+    <span class="p-float-label">
+      <input id="float-input-invalid" type="text" pInputText [(ngModel)]="movie.description"
+        class="ng-invalid ng-dirty">
+      <label for="float-input-invalid">Opis</label>
+    </span>
+  </div>
+  <div class="p-field">
+    <p-dropdown [options]="directorList" [(ngModel)]="selectedDirector" placeholder="Wybierz reżysera"
+      optionLabel="surname" ></p-dropdown>
+  </div>
+  <button pButton type="button" label="Zapisz" (click)="updateMovie()"></button>
+</div>

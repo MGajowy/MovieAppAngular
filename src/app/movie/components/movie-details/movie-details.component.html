@@ -18,8 +18,9 @@
         (click)="modifyMovie()"></button>
     </div>
   </div>
-
+</p-panel>
+<p-panel header="Modyfikuj film" *ngIf="modify">
   <div class="container-box" style="width: auto;">
-    <app-modify-movie *ngIf="modify"></app-modify-movie>
-  </div>
+  <app-modify-movie ></app-modify-movie>
+</div>
 </p-panel>
